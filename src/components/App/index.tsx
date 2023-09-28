@@ -7,11 +7,12 @@ import { createPortal } from 'react-dom';
 const App = props => {
   const { scrollyConfig } = props;
 
-  const onMarker = config => {
-    console.log(config);
-  };
-
+  const [param, setParam] = useState(0);
   const [progress, setProgress] = useState(0);
+
+  const onMarker = config => {
+    setParam(config.param);
+  };
 
   return (
     <>
@@ -21,10 +22,11 @@ const App = props => {
           onMarker={onMarker}
           onProgress={({ pctAboveFold }) => setProgress(pctAboveFold)}
         >
+          ˝
           <div className={styles.root}>
             <Worm />
-            <pre>{JSON.stringify({ hello: 'hello' })}</pre>
-            <h1>scrolly-demo</h1>
+            <pre>{JSON.stringify({ param: param })}</pre>
+            <h1>Progress: {progress}</h1>
           </div>
         </Scrollyteller>,
         scrollyConfig.mountNode
