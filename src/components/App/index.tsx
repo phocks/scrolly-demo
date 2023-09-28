@@ -22,7 +22,6 @@ const App = props => {
           onMarker={onMarker}
           onProgress={({ pctAboveFold }) => setProgress(pctAboveFold)}
         >
-          ˝
           <div className={styles.root}>
             <Worm />
             <pre>{JSON.stringify({ param: param })}</pre>
