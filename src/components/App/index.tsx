@@ -5,14 +5,18 @@ import Scrollyteller from '@abcnews/scrollyteller';
 import { createPortal } from 'react-dom';
 
 const App = props => {
-  console.log(props);
   const { scrollyConfig } = props;
+
+  const onMarker = config => {
+    console.log(config);
+  };
+
   return (
     <>
       {createPortal(
         <Scrollyteller
           panels={props.scrollyConfig.panels}
-          // onMarker={({ thing }) => setSomething(thing)}
+          onMarker={onMarker}
           // onProgress={({ pctAboveFold }) => setProgress(pctAboveFold)}
         >
           <div className={styles.root}>
