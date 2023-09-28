@@ -7,7 +7,6 @@ import App from './components/App';
 import { loadScrollyteller } from '@abcnews/scrollyteller';
 
 let root: Root;
-let result;
 let scrollyConfig;
 
 function renderApp() {
