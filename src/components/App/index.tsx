@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Worm from '../Worm';
 import styles from './styles.scss';
 import Scrollyteller from '@abcnews/scrollyteller';
@@ -11,13 +11,15 @@ const App = props => {
     console.log(config);
   };
 
+  const [progress, setProgress] = useState(0);
+
   return (
     <>
       {createPortal(
         <Scrollyteller
           panels={props.scrollyConfig.panels}
           onMarker={onMarker}
-          // onProgress={({ pctAboveFold }) => setProgress(pctAboveFold)}
+          onProgress={({ pctAboveFold }) => setProgress(pctAboveFold)}
         >
           <div className={styles.root}>
             <Worm />
