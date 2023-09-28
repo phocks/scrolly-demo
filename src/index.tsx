@@ -16,11 +16,10 @@ function renderApp() {
 whenOdysseyLoaded.then(() => {
   const [appMountEl] = selectMounts('scrollydemo');
 
-  scrollyConfig = loadScrollyteller("", "u-full", "mark");
+  scrollyConfig = loadScrollyteller('', 'u-full', 'mark');
 
   if (appMountEl) {
     root = createRoot(appMountEl);
-    // appProps = acto(getMountValue(appMountEl)) as AppProps;
     renderApp();
   }
 });
